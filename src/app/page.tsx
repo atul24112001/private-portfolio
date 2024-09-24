@@ -1,101 +1,161 @@
+import { Github, Globe, Linkedin, Mail, Phone, X } from "lucide-react";
 import Image from "next/image";
+import profileImage from "./assets/Profile.jpg";
+import LinkButton from "@/components/LinkButton";
+import Wrapper from "@/components/Wrapper";
+import WorkExperience from "@/components/WorkExperience";
+import PullRequest from "@/components/PullRequest";
+
+const WE = [
+  {
+    id: "3",
+    designation: "Full-Stack Engineer",
+    companyName: "Tenantpe",
+    date: "Feb 2024 - Present",
+    location: "Remote",
+    companyLink: "https://dev.tenantpe.com",
+    skills: [
+      "React",
+      "Nodejs",
+      "Express",
+      "Postgres",
+      "Typescript",
+      "NextJs",
+      "CI/CD",
+      "Cypress",
+      "AWS Devops",
+    ],
+  },
+  {
+    id: "2",
+    designation: "Full-Stack Engineer",
+    companyName: "Settyl",
+    date: "Jan 2023 - Dec 2023",
+    location: "Remote",
+    companyLink: "https://settyl.com",
+    skills: [
+      "React",
+      "Nodejs",
+      "Express",
+      "MongoDb",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Microservices",
+      "Azure Devops",
+    ],
+  },
+  {
+    id: "1",
+    designation: "Full-Stack Engineer Intern",
+    companyName: "Settyl",
+    date: "May 2022 - Dec 2022",
+    location: "Remote",
+    companyLink: "https://settyl.com",
+    skills: ["React", "Nodejs", "Express", "MongoDb"],
+  },
+];
+
+const PRs = [
+  {
+    id: "1",
+    title: "code100x/muzer #43",
+    link: "https://github.com/code100x/muzer/pull/43",
+    addition: "+5,079",
+    subtraction: "−2,586",
+  },
+  {
+    id: "1",
+    title: "code100x/muzer #89",
+    link: "https://github.com/code100x/muzer/pull/89 ",
+    addition: "+142",
+    subtraction: "−54",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="py-12">
+      <div className="w-11/12 md:w-2/3 lg:w-2/5 mx-auto">
+        <div className="flex justify-between items-center">
+          <div className="flex flex-col gap-2 ">
+            <div className="flex items-center gap-2">
+              <h1 className="text-xl md:text-2xl font-bold m-0">
+                Atul Morchhlay
+              </h1>
+              {/* <a
+                className="flex items-center gap-2 bg-slate-300 text-black px-2 py-1 rounded-sm text-xs mt-1 font-bold font-mono"
+                href="mailto:atulmorchhlay204@gmail.com"
+              >
+                <Mail size={14} /> Hire me!
+              </a> */}
+            </div>
+            <p className="font-mono text-pretty font-normal text-xs md:text-sm text-muted-foreground">
+              Crafting scalable, user-centric digital solutions with full-stack
+              expertise and modern technology.
+            </p>
+            <a
+              href="https://maps.app.goo.gl/jkwfRw9YxYa6sEyR8"
+              target="_blank"
+              className="flex hover:underline items-center gap-2 text-xs md:text-sm text-muted-foreground"
+              id="current-location"
+            >
+              <Globe size={14} /> Indore, Madhya Pradesh, India
+            </a>
+            <div className="flex gap-3">
+              <LinkButton
+                tooltip="Mail"
+                href="mailto:atulmorchhlay204@gmail.com"
+              >
+                <Mail width={14} className="text-muted-foreground" />
+              </LinkButton>
+              <LinkButton tooltip="Phone" href="tel:+919669801746">
+                <Phone width={14} className="text-muted-foreground" />
+              </LinkButton>
+              <LinkButton
+                tooltip="Github"
+                href="https://github.com/atul24112001"
+              >
+                <Github width={14} className="text-muted-foreground" />
+              </LinkButton>
+              <LinkButton
+                tooltip="Linkedin"
+                href="https://www.linkedin.com/in/atul-morchhlay"
+              >
+                <Linkedin width={14} className="text-muted-foreground" />
+              </LinkButton>
+              <LinkButton
+                tooltip="Twitter/X"
+                href="https://x.com/MorchhlayAtul"
+              >
+                <X width={14} className="text-muted-foreground" />
+              </LinkButton>
+              {/* <LinkButton href="">
+                <ScrollText width={14} className="text-muted-foreground" />
+              </LinkButton> */}
+            </div>
+          </div>
+          <div className=" flex justify-end w-[150px]">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="rounded-sm"
+              width={150}
+              height={150}
+              alt="profile"
+              src={profileImage}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <Wrapper heading="Work Experience">
+          {WE.map((we) => {
+            return <WorkExperience {...we} key={we.id} />;
+          })}
+        </Wrapper>
+        <Wrapper heading="Open Source">
+          {PRs.map((pr) => {
+            return <PullRequest key={pr.id} {...pr} />;
+          })}
+        </Wrapper>
+      </div>
     </div>
   );
 }
