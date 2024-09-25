@@ -5,6 +5,7 @@ import LinkButton from "@/components/LinkButton";
 import Wrapper from "@/components/Wrapper";
 import WorkExperience from "@/components/WorkExperience";
 import PullRequest from "@/components/PullRequest";
+import Head from "next/head";
 
 const WE = [
   {
@@ -76,6 +77,14 @@ const PRs = [
 export default function Home() {
   return (
     <div className="py-12">
+      <Head>
+        <title>Atul Morchhlay</title>
+        <meta
+          property="og:title"
+          content="Atul Morchhlay portfolio"
+          key="title"
+        />
+      </Head>
       <div className="w-11/12 md:w-2/3 lg:w-2/5 mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2 ">

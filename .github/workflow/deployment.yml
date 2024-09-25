@@ -1,0 +1,34 @@
+name: Deploy to vm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    run-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Add to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          cp known_hosts ~/.ssh/known_hosts
+
+      - name: SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd portfolio
+            git stash
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart portfolio
