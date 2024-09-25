@@ -6,6 +6,8 @@ import Wrapper from "@/components/Wrapper";
 import WorkExperience from "@/components/WorkExperience";
 import PullRequest from "@/components/PullRequest";
 import Head from "next/head";
+import Chip from "@/components/Chip";
+import FreelanceWork from "@/components/FreelanceWork";
 
 const WE = [
   {
@@ -71,6 +73,40 @@ const PRs = [
     link: "https://github.com/code100x/muzer/pull/89 ",
     addition: "+142",
     subtraction: "−54",
+  },
+];
+
+const SKILLS = [
+  "ReactJs",
+  "NodeJs",
+  "Typescript",
+  "SQL/NoSQL",
+  "NextJs",
+  "Redis",
+  "AWS",
+  "Devops",
+  "Docker",
+  "Kubernetes",
+  "CI/CD",
+  "Cypress",
+  "Jest",
+  "Dart/Flutter",
+];
+
+const FREELANCE = [
+  {
+    id: "1",
+    label: "Wynter dreams",
+    link: "https://www.wyntersdreams.com",
+    date: "Jan 2024",
+    skills: ["React", "Go", "Razorpay", "CI/CD", "Docker", "Postgres"],
+  },
+  {
+    id: "2",
+    label: "My Ai Teacher",
+    link: "https://play.google.com/store/apps/details?id=com.mmbg.myaiteacher&hl=en_IN",
+    date: "Dec 2023",
+    skills: ["React", "Flutter", "Razorpay", "Nodejs", "Postgres"],
   },
 ];
 
@@ -154,6 +190,13 @@ export default function Home() {
             />
           </div>
         </div>
+        <Wrapper heading="Skills">
+          <div className="flex flex-wrap gap-2">
+            {SKILLS.map((skill, index) => {
+              return <Chip key={`skill-${index + 1}`}>{skill}</Chip>;
+            })}
+          </div>
+        </Wrapper>
         <Wrapper heading="Work Experience">
           {WE.map((we) => {
             return <WorkExperience {...we} key={we.id} />;
@@ -162,6 +205,11 @@ export default function Home() {
         <Wrapper heading="Open Source">
           {PRs.map((pr) => {
             return <PullRequest key={pr.id} {...pr} />;
+          })}
+        </Wrapper>
+        <Wrapper heading="Freelance work">
+          {FREELANCE.map((work) => {
+            return <FreelanceWork key={work.id} {...work} />;
           })}
         </Wrapper>
       </div>
