@@ -26,6 +26,7 @@ jobs:
             cd portfolio
             git stash
             git pull origin main
+            pwd
             /root/.nvm/versions/v20.9.0/pnpm install
             /root/.nvm/versions/v20.9.0/pnpm run build
             /root/.nvm/versions/v20.9.0/pm2 restart portfolio
