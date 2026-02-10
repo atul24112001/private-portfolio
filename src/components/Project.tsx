@@ -1,4 +1,4 @@
-import { Github, Link } from "lucide-react";
+import { AppleIcon, Github, Link, PlayIcon } from "lucide-react";
 import React from "react";
 import NextLink from "next/link";
 
@@ -8,6 +8,8 @@ export default function Project({
   github,
   link,
   description,
+  ios,
+  android,
 }: Props) {
   return (
     <div className="bg-secondary py-2 px-2 md:px-4 rounded-md mb-2">
@@ -23,9 +25,21 @@ export default function Project({
           <NextLink href={github} target="_blank">
             <Github size={16} />
           </NextLink>
-          <NextLink href={link} target="_blank">
-            <Link size={16} />
-          </NextLink>
+          {link && (
+            <NextLink href={link} target="_blank">
+              <Link size={16} />
+            </NextLink>
+          )}
+          {ios && (
+            <NextLink href={ios} target="_blank">
+              <AppleIcon size={16} />
+            </NextLink>
+          )}
+          {android && (
+            <NextLink href={android} target="_blank">
+              <PlayIcon size={16} />
+            </NextLink>
+          )}
         </div>
       </div>
       <div className="font-bold text-xs md:text-sm">
@@ -40,7 +54,9 @@ type Props = {
   id: string;
   title: string;
   description: string;
-  link: string;
+  link?: string;
+  ios?: string;
+  android?: string;
   github: string;
   skills: string[];
 };

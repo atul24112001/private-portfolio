@@ -98,14 +98,15 @@ export default function Home() {
             })}
           </div>
         </Wrapper>
-        <Wrapper heading="Projects">
-          {PROJECTS.map((project) => {
-            return <Project {...project} key={project.id} />;
-          })}
-        </Wrapper>
+
         <Wrapper heading="Work Experience">
           {WE.map((we) => {
             return <WorkExperience {...we} key={we.id} />;
+          })}
+        </Wrapper>
+        <Wrapper heading="Projects">
+          {PROJECTS.map((project) => {
+            return <Project {...project} key={project.id} />;
           })}
         </Wrapper>
         <Wrapper heading="Open Source">

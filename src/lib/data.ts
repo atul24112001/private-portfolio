@@ -2,19 +2,19 @@ export const WE = [
   {
     id: "3",
     designation: "Full-Stack Engineer",
-    companyName: "Tenantpe",
+    companyName: "Fixlaa",
     date: "Feb 2024 - Present",
     location: "Remote",
-    companyLink: "https://dev.tenantpe.com",
+    companyLink: "https://www.fixlaa.com",
     skills: [
       "React",
+      "React Native",
       "Nodejs",
       "Express",
       "Postgres",
       "Typescript",
       "NextJs",
       "CI/CD",
-      "Cypress",
       "AWS Devops",
     ],
   },
@@ -102,7 +102,35 @@ export const FREELANCE = [
 
 export const PROJECTS = [
   {
-    id: "1",
+    id: "5",
+    title: "Fixlaa website",
+    description:
+      "Fixlaa is a reliable home services provider in Singapore, including aircon maintenance, plumbing, painting, electrical repair, cleaning, and moving",
+    link: "https://www.fixlaa.com",
+    github: "https://github.com/atul24112001",
+    skills: ["Nextjs", "Express", "Postgres"],
+  },
+  {
+    id: "6",
+    title: "Fixlaa app",
+    description:
+      "Fixlaa is a reliable home services provider in Singapore. I have build the app, also deployed it on app store and play store end to end single handedly",
+    ios: "itms-apps://apps.apple.com/sg/app/fixlaa/id6742393296",
+    android: "https://play.google.com/store/apps/details?id=com.fixlaa.app",
+    github: "https://github.com/atul24112001",
+    skills: ["React native", "Expo", "Deployment"],
+  },
+  {
+    id: "7",
+    title: "Winners",
+    description:
+      "Winners is a coaching institute based in indore & have online presence as well. I have build and deployed the website and admin portal end to end alone",
+    link: "https://www.winnersinstitute.in/",
+    github: "https://github.com/atul24112001",
+    skills: ["Nextjs", "Express", "Postgres", "AWS"],
+  },
+  {
+    id: "8",
     title: "Mari arena",
     description:
       "A competitive flappy bird game where you can stack and earn solana",
@@ -111,7 +139,7 @@ export const PROJECTS = [
     skills: ["Golang", "React", "Postgres", "Redis"],
   },
   {
-    id: "2",
+    id: "9",
     title: "Trackpack",
     description: "A web-base web3 wallet for managing key pairs locally",
     link: "https://trackpack.atulmorchhlay.com/",
@@ -119,7 +147,7 @@ export const PROJECTS = [
     skills: ["React", "Tailwind", "@solana/web3.js", "ethers"],
   },
   {
-    id: "3",
+    id: "10",
     title: "Trackpack bot",
     description: "A telegram bot which handles web3 wallet",
     link: "https://t.me/TrackpackVaultbot",

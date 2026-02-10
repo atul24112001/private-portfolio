@@ -14,7 +14,10 @@ export default function WorkExperience({
         <div className="mb-3">
           <h3 className="text-sm md:text-lg font-bold mb-0">{designation}</h3>
           <h4 className="text-xs text-muted-foreground font-mono">
-            <a href={companyLink}>{companyName}</a>, {location}
+            <a href={companyLink} target="_blank">
+              {companyName}
+            </a>
+            , {location}
           </h4>
         </div>
         <div className="text-xs md:text-sm text-muted-foreground mt-1">
