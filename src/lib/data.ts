@@ -24,7 +24,7 @@ export const WE = [
     companyName: "Settyl",
     date: "Jan 2023 - Dec 2023",
     location: "Remote",
-    companyLink: "https://settyl.com",
+    companyLink: "https://www.settyl.com",
     skills: [
       "React",
       "Nodejs",
@@ -43,7 +43,7 @@ export const WE = [
     companyName: "Settyl",
     date: "May 2022 - Dec 2022",
     location: "Remote",
-    companyLink: "https://settyl.com",
+    companyLink: "https://www.settyl.com",
     skills: ["React", "Nodejs", "Express", "MongoDb"],
   },
 ];
@@ -81,6 +81,9 @@ export const SKILLS = [
   "Cypress",
   "Jest",
   "Dart/Flutter",
+  "React Native",
+  "Android",
+  "iOS",
 ];
 
 export const FREELANCE = [
